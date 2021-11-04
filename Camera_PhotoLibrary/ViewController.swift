@@ -9,7 +9,8 @@ import UIKit
 import PhotosUI
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, PHPickerViewControllerDelegate {
-
+    
+  
     @IBOutlet weak var myImageView: UIImageView!
     
     let imgStore = ImgStore()
@@ -20,7 +21,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         // Do any additional setup after loading the view.
         
         let imageToDisplay = imgStore.image(forKey: myFavImage)
-        
+        myImageView.image = imageToDisplay
+       
         //Set the myImageView.image to imageToDisplay
        
         
@@ -30,34 +32,36 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     @IBAction func OpenPhotosLibrary(_ sender: Any) {
         // your code here
+        //presentPhotoPicker()
+        presentImagePicker()
        
     }
     
     @IBAction func OpenCam(_ sender: Any) {
         //your code here
-       
+        presentImagePicker()
     }
     
     
     func presentImagePicker() {
         let imagePicker = UIImagePickerController()
-        imagePicker.sourceType = .camera
+        imagePicker.sourceType = .photoLibrary
         imagePicker.delegate = self
         present(imagePicker, animated: true, completion: nil)
     }
 
-    func presentPhotoPicker() {
-        var configuration = PHPickerConfiguration()
-        configuration.selectionLimit = 1
-        configuration.filter = .images
-
-        let photoPicker = PHPickerViewController(configuration: configuration)
-        photoPicker.delegate = self
-        present(photoPicker, animated: true, completion: nil)
-    }
-    
-    
-    
+//    func presentPhotoPicker() {
+//        var configuration = PHPickerConfiguration()
+//        configuration.selectionLimit = 1
+//        configuration.filter = .images
+//
+//        let photoPicker = PHPickerViewController(configuration: configuration)
+//        photoPicker.delegate = self
+//        present(photoPicker, animated: true, completion: nil)
+//    }
+//
+//
+//
     
     
     func imagePickerController(_ picker: UIImagePickerController,
@@ -70,7 +74,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let image = info[.originalImage] as! UIImage
 
         // Put that image in the imageView
-        
+        self.myImageView.image = image
 
         // Store the image in the ImageStore for the item's key
         imgStore.setImage(image, forKey: myFavImage)
@@ -88,6 +92,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
                     
                     DispatchQueue.main.async {
+                        self.myImageView.image = image
                         // Put the image in the imageview
                         
                     }

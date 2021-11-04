@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -15,13 +15,67 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0kP-To-HSR">
+                                <rect key="frame" x="0.0" y="163" width="414" height="263"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="414" id="6Ro-Vj-F3d"/>
+                                    <constraint firstAttribute="height" constant="263" id="KTD-vs-UKc"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Favorite Image" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SwM-hN-S9h">
+                                <rect key="frame" x="20" y="108" width="374" height="30"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fPV-dK-R74">
+                                <rect key="frame" x="20" y="545" width="153" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="153" id="Hl7-bB-hEf"/>
+                                    <constraint firstAttribute="height" constant="31" id="YFC-de-0dl"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Choose Photo"/>
+                                <connections>
+                                    <action selector="OpenPhotosLibrary:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iTu-bb-yzG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kli-wu-vmg">
+                                <rect key="frame" x="249" y="545" width="145" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="Klk-5y-kR5"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Open Cam"/>
+                                <connections>
+                                    <action selector="OpenCam:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Acc-4m-Mxb"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="kli-wu-vmg" firstAttribute="top" secondItem="0kP-To-HSR" secondAttribute="bottom" constant="119" id="2lE-N7-1N0"/>
+                            <constraint firstItem="kli-wu-vmg" firstAttribute="leading" secondItem="fPV-dK-R74" secondAttribute="trailing" constant="76" id="4JP-U2-T7Q"/>
+                            <constraint firstItem="SwM-hN-S9h" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="64" id="EdX-bx-F3d"/>
+                            <constraint firstItem="fPV-dK-R74" firstAttribute="top" secondItem="0kP-To-HSR" secondAttribute="bottom" constant="119" id="Fqj-s9-vOr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kli-wu-vmg" secondAttribute="trailing" constant="20" id="Kra-KU-Vqh"/>
+                            <constraint firstItem="0kP-To-HSR" firstAttribute="top" secondItem="SwM-hN-S9h" secondAttribute="bottom" constant="25" id="N9E-Ox-lp0"/>
+                            <constraint firstItem="SwM-hN-S9h" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="STP-vc-GVH"/>
+                            <constraint firstItem="0kP-To-HSR" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="g7r-1Q-srf"/>
+                            <constraint firstItem="fPV-dK-R74" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="pit-j2-uHq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SwM-hN-S9h" secondAttribute="trailing" constant="20" id="wbO-oO-odz"/>
+                            <constraint firstItem="0kP-To-HSR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="yy3-wW-vhm"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="myImageView" destination="0kP-To-HSR" id="wj3-Ue-q6d"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="18.840579710144929" y="93.75"/>
+            <point key="canvasLocation" x="-636" y="115"/>
         </scene>
     </scenes>
     <resources>
