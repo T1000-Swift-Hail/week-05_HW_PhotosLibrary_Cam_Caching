@@ -15,9 +15,53 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Favorite Image" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eL3-mp-4ir">
+                                <rect key="frame" x="20" y="94" width="195" height="28"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8eJ-DX-3wO">
+                                <rect key="frame" x="20" y="459" width="113" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="choose photo"/>
+                                <connections>
+                                    <action selector="OpenPhotosLibrary:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5mK-yM-5vs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q9g-mm-PrB">
+                                <rect key="frame" x="281" y="459" width="113" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Open Camera"/>
+                                <connections>
+                                    <action selector="OpenCam:" destination="BYZ-38-t0r" eventType="touchUpInside" id="elv-TM-Nuo"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MaN-Q3-j2z">
+                                <rect key="frame" x="20" y="142" width="374" height="265"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="265" id="igd-MO-bdv"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="MaN-Q3-j2z" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="2QK-MH-IW2"/>
+                            <constraint firstItem="8eJ-DX-3wO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="7qc-xR-Igf"/>
+                            <constraint firstItem="8eJ-DX-3wO" firstAttribute="baseline" secondItem="Q9g-mm-PrB" secondAttribute="baseline" id="DHF-9L-q9D"/>
+                            <constraint firstItem="8eJ-DX-3wO" firstAttribute="top" secondItem="MaN-Q3-j2z" secondAttribute="bottom" constant="52" id="Itk-Kf-PWr"/>
+                            <constraint firstItem="eL3-mp-4ir" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="OUY-1q-9sn"/>
+                            <constraint firstItem="eL3-mp-4ir" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="Pji-02-KUd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Q9g-mm-PrB" secondAttribute="trailing" constant="20" id="VqY-B2-769"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MaN-Q3-j2z" secondAttribute="trailing" constant="20" id="fqK-Fz-jQ8"/>
+                            <constraint firstItem="MaN-Q3-j2z" firstAttribute="top" secondItem="eL3-mp-4ir" secondAttribute="bottom" constant="20" id="hql-iE-K2d"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="myImageView" destination="MaN-Q3-j2z" id="WH3-DO-o3a"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
