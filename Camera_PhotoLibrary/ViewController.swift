@@ -22,7 +22,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let imageToDisplay = imgStore.image(forKey: myFavImage)
         
         //Set the myImageView.image to imageToDisplay
-       
+        self.myImageView.image = imageToDisplay
+        
         
         
         
@@ -30,12 +31,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     @IBAction func OpenPhotosLibrary(_ sender: Any) {
         // your code here
-       
+       presentPhotoPicker()
     }
     
     @IBAction func OpenCam(_ sender: Any) {
         //your code here
-       
+       presentImagePicker()
     }
     
     
@@ -89,7 +90,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                     
                     DispatchQueue.main.async {
                         // Put the image in the imageview
-                        
+                        self.myImageView.image = image
                     }
                 }
             }
