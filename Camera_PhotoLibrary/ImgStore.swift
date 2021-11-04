@@ -3,7 +3,6 @@
 //  Camera_PhotoLibrary
 //
 //  Created by Akeel Al-Ead on 04/11/2021.
-//
 
 
 import UIKit
@@ -11,7 +10,9 @@ import UIKit
 class ImgStore {
     
     let cache = NSCache<NSString, UIImage>()
-    
+//***
+   
+//  ***
     func setImage(_ image: UIImage, forKey key: String) {
         cache.setObject(image, forKey: key as NSString)
         

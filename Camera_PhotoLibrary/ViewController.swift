@@ -22,18 +22,19 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let imageToDisplay = imgStore.image(forKey: myFavImage)
         
         //Set the myImageView.image to imageToDisplay
-       
-        
-        
+        myImageView.image = imageToDisplay
         
     }
 
     @IBAction func OpenPhotosLibrary(_ sender: Any) {
         // your code here
-       
+        presentPhotoPicker()
     }
     
     @IBAction func OpenCam(_ sender: Any) {
+        
+        presentImagePicker()
+       
         //your code here
        
     }
@@ -58,7 +59,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     
     
-    
+//      To display the image .........
     
     func imagePickerController(_ picker: UIImagePickerController,
             didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
@@ -70,13 +71,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let image = info[.originalImage] as! UIImage
 
         // Put that image in the imageView
-        
+        self.myImageView.image = image    // sol ......
 
         // Store the image in the ImageStore for the item's key
         imgStore.setImage(image, forKey: myFavImage)
 
     }
-
+//    To display the image .....
     func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
         dismiss(animated: true, completion: nil)
 
@@ -89,7 +90,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                     
                     DispatchQueue.main.async {
                         // Put the image in the imageview
-                        
+                        self.myImageView.image = image      // sol.....
                     }
                 }
             }
