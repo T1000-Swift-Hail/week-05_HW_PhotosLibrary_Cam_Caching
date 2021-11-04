@@ -20,32 +20,28 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         // Do any additional setup after loading the view.
         
         let imageToDisplay = imgStore.image(forKey: myFavImage)
-        
+        myImageView.image = imageToDisplay
         //Set the myImageView.image to imageToDisplay
        
-        
-        
-        
     }
 
     @IBAction func OpenPhotosLibrary(_ sender: Any) {
-        // your code here
-       
+        // your code her
+        presentPhotoPicker()
     }
     
     @IBAction func OpenCam(_ sender: Any) {
         //your code here
-       
+        presentImagePicker()
     }
     
     
-    func presentImagePicker() {
-        let imagePicker = UIImagePickerController()
-        imagePicker.sourceType = .camera
-        imagePicker.delegate = self
-        present(imagePicker, animated: true, completion: nil)
-    }
+    
 
+    
+    
+    
+    
     func presentPhotoPicker() {
         var configuration = PHPickerConfiguration()
         configuration.selectionLimit = 1
@@ -56,12 +52,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         present(photoPicker, animated: true, completion: nil)
     }
     
+    func presentImagePicker() {
+        let imagePicker = UIImagePickerController()
+        imagePicker.sourceType = .camera
+        imagePicker.delegate = self
+        present(imagePicker, animated: true, completion: nil)
+    }
     
-    
-    
-    
-    func imagePickerController(_ picker: UIImagePickerController,
-            didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
 
         // Take image picker off the screen - you must call this dismiss method
         dismiss(animated: true, completion: nil)
@@ -70,15 +68,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let image = info[.originalImage] as! UIImage
 
         // Put that image in the imageView
-        
+        myImageView.image = image
 
         // Store the image in the ImageStore for the item's key
         imgStore.setImage(image, forKey: myFavImage)
 
     }
 
-    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
-        dismiss(animated: true, completion: nil)
+    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) { dismiss(animated: true, completion: nil)
 
         if let result = results.first, result.itemProvider.canLoadObject(ofClass: UIImage.self) {
             result.itemProvider.loadObject(ofClass: UIImage.self) { (image, error) in
@@ -89,7 +86,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                     
                     DispatchQueue.main.async {
                         // Put the image in the imageview
-                        
+                        self.myImageView.image = image
                     }
                 }
             }
