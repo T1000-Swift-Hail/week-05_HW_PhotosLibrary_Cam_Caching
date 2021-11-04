@@ -30,7 +30,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     @IBAction func OpenPhotosLibrary(_ sender: Any) {
         // your code here
-        presentPhotoPicker()
+        //presentPhotoPicker()
+        presentImagePicker()
        
     }
     
@@ -42,20 +43,20 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func presentImagePicker() {
         let imagePicker = UIImagePickerController()
-        imagePicker.sourceType = .camera
+        imagePicker.sourceType = .photoLibrary
         imagePicker.delegate = self
         present(imagePicker, animated: true, completion: nil)
     }
 
-    func presentPhotoPicker() {
-        var configuration = PHPickerConfiguration()
-        configuration.selectionLimit = 1
-        configuration.filter = .images
-
-        let photoPicker = PHPickerViewController(configuration: configuration)
-        photoPicker.delegate = self
-        present(photoPicker, animated: true, completion: nil)
-    }
+//    func presentPhotoPicker() {
+//        var configuration = PHPickerConfiguration()
+//        configuration.selectionLimit = 1
+//        configuration.filter = .images
+//
+//        let photoPicker = PHPickerViewController(configuration: configuration)
+//        photoPicker.delegate = self
+//        present(photoPicker, animated: true, completion: nil)
+//    }
     
     
     
