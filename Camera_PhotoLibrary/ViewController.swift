@@ -23,38 +23,48 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         //Set the myImageView.image to imageToDisplay
        
-        
+        myImageView.image = imageToDisplay
         
         
     }
 
     @IBAction func OpenPhotosLibrary(_ sender: Any) {
         // your code here
-       
+        presentImagePicker()
+        
+        //MARK: -
+        // we can chose more than on photo by ussing (presentPhotoPicker)
+        
+        
+        
+        
+        
+        
     }
     
     @IBAction func OpenCam(_ sender: Any) {
         //your code here
-       
+        presentImagePicker()
     }
     
     
     func presentImagePicker() {
         let imagePicker = UIImagePickerController()
-        imagePicker.sourceType = .camera
+        imagePicker.sourceType = .photoLibrary
         imagePicker.delegate = self
         present(imagePicker, animated: true, completion: nil)
+        
     }
-
-    func presentPhotoPicker() {
-        var configuration = PHPickerConfiguration()
-        configuration.selectionLimit = 1
-        configuration.filter = .images
-
-        let photoPicker = PHPickerViewController(configuration: configuration)
-        photoPicker.delegate = self
-        present(photoPicker, animated: true, completion: nil)
-    }
+//
+//    func presentPhotoPicker() {
+//        var configuration = PHPickerConfiguration()
+//        configuration.selectionLimit = 1
+//        configuration.filter = .images
+//
+//        let photoPicker = PHPickerViewController(configuration: configuration)
+//        photoPicker.delegate = self
+//        present(photoPicker, animated: true, completion: nil)
+//    }
     
     
     
@@ -68,7 +78,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
         // Get picked image from info dictionary
         let image = info[.originalImage] as! UIImage
-
+        self.myImageView.image = image
         // Put that image in the imageView
         
 
@@ -89,7 +99,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                     
                     DispatchQueue.main.async {
                         // Put the image in the imageview
-                        
+                        self.myImageView.image = image
                     }
                 }
             }
