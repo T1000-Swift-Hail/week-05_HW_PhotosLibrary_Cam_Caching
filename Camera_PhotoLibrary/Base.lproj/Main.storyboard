@@ -15,9 +15,56 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Favorite Image" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GSl-gR-cjS">
+                                <rect key="frame" x="20" y="96" width="261.5" height="37"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fy6-ay-EAM">
+                                <rect key="frame" x="20" y="155" width="374" height="296"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="296" id="W7D-Yw-7DL"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h5T-WQ-6wx">
+                                <rect key="frame" x="281" y="530" width="113" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Open Camera"/>
+                                <connections>
+                                    <action selector="OpenCam:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IlD-vp-JAV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GRx-sq-bdL">
+                                <rect key="frame" x="20" y="530" width="115" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Choose Photo"/>
+                                <connections>
+                                    <action selector="OpenPhotosLibrary:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kjM-cV-KWj"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="GSl-gR-cjS" secondAttribute="trailing" symbolic="YES" id="8MY-Qr-ttz"/>
+                            <constraint firstItem="Fy6-ay-EAM" firstAttribute="top" secondItem="GSl-gR-cjS" secondAttribute="bottom" constant="22" id="GI8-0G-swO"/>
+                            <constraint firstItem="h5T-WQ-6wx" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="GRx-sq-bdL" secondAttribute="trailing" constant="8" symbolic="YES" id="M7c-ty-5Mc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Fy6-ay-EAM" secondAttribute="trailing" constant="20" id="PkA-Wk-Lmk"/>
+                            <constraint firstItem="GRx-sq-bdL" firstAttribute="baseline" secondItem="h5T-WQ-6wx" secondAttribute="baseline" id="X4R-fp-DGC"/>
+                            <constraint firstItem="Fy6-ay-EAM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="YsH-de-W8V"/>
+                            <constraint firstItem="h5T-WQ-6wx" firstAttribute="top" secondItem="Fy6-ay-EAM" secondAttribute="bottom" constant="79" id="kWh-kj-C4I"/>
+                            <constraint firstItem="GSl-gR-cjS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="oE7-NW-qzQ"/>
+                            <constraint firstItem="Fy6-ay-EAM" firstAttribute="trailing" secondItem="h5T-WQ-6wx" secondAttribute="trailing" id="q8B-Qp-mQ7"/>
+                            <constraint firstItem="GSl-gR-cjS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="52" id="s2n-rI-4Ms"/>
+                            <constraint firstItem="Fy6-ay-EAM" firstAttribute="top" secondItem="GSl-gR-cjS" secondAttribute="bottom" constant="22" id="s2o-iT-6ye"/>
+                            <constraint firstItem="GRx-sq-bdL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="sno-gl-9dd"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="myImageView" destination="Fy6-ay-EAM" id="f1F-7p-rRO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
