@@ -1,14 +1,13 @@
 //
-//  ImageStore.swift
-//  Camera_PhotoLibrary
+//PhotosLibrary_Cam_Caching
 //
-//  Created by Akeel Al-Ead on 04/11/2021.
+//  Created by Dalal AlSaidi on 29/03/1443 AH.
 //
 
 
 import UIKit
 
-class ImgStore {
+class ImageStore {
     
     let cache = NSCache<NSString, UIImage>()
     
