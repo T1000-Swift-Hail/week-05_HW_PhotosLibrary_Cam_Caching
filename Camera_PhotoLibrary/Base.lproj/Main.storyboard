@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -13,18 +13,75 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Camera_PhotoLibrary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Faviorte Image" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tEX-ZC-rat">
+                                <rect key="frame" x="20" y="71" width="212" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="NG6-hu-Uim"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1111" translatesAutoresizingMaskIntoConstraints="NO" id="jK1-cQ-Cmo">
+                                <rect key="frame" x="20" y="122" width="354" height="333"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="333" id="rOD-hZ-p6t"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tAK-IV-D90">
+                                <rect key="frame" x="255" y="508" width="119" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="119" id="opV-Ia-zg7"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Open cam"/>
+                                <connections>
+                                    <action selector="OpenCam:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RZm-Da-LmI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zjz-6y-XA2">
+                                <rect key="frame" x="20.000000000000007" y="508" width="114.66666666666669" height="33"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Choose photo"/>
+                                <connections>
+                                    <action selector="OpenPhotosLibrary:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fTL-aZ-jE9"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="tEX-ZC-rat" secondAttribute="trailing" symbolic="YES" id="2wz-TP-p5C"/>
+                            <constraint firstItem="Zjz-6y-XA2" firstAttribute="top" secondItem="jK1-cQ-Cmo" secondAttribute="bottom" constant="53" id="BB5-DF-Ngn"/>
+                            <constraint firstItem="tAK-IV-D90" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Ds4-Ud-LFF"/>
+                            <constraint firstItem="tAK-IV-D90" firstAttribute="firstBaseline" secondItem="Zjz-6y-XA2" secondAttribute="baseline" id="JA5-jg-5MM"/>
+                            <constraint firstItem="tAK-IV-D90" firstAttribute="baseline" secondItem="Zjz-6y-XA2" secondAttribute="baseline" id="KZL-R6-D1h"/>
+                            <constraint firstItem="jK1-cQ-Cmo" firstAttribute="top" secondItem="tEX-ZC-rat" secondAttribute="bottom" constant="21" id="PoK-ks-na9"/>
+                            <constraint firstItem="tEX-ZC-rat" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Tcx-Xm-EOE"/>
+                            <constraint firstItem="tAK-IV-D90" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Zjz-6y-XA2" secondAttribute="trailing" constant="8" symbolic="YES" id="Vyv-ox-0d9"/>
+                            <constraint firstItem="tAK-IV-D90" firstAttribute="trailing" secondItem="jK1-cQ-Cmo" secondAttribute="trailing" id="Y2L-qL-Mre"/>
+                            <constraint firstItem="jK1-cQ-Cmo" firstAttribute="leading" secondItem="tEX-ZC-rat" secondAttribute="leading" id="awV-qU-Bfc"/>
+                            <constraint firstItem="jK1-cQ-Cmo" firstAttribute="top" secondItem="tEX-ZC-rat" secondAttribute="bottom" constant="21" id="cBL-Yi-Le6"/>
+                            <constraint firstItem="tEX-ZC-rat" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="27" id="fg1-M3-8vI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="tAK-IV-D90" secondAttribute="bottom" constant="269" id="gtt-yT-kew"/>
+                            <constraint firstItem="tAK-IV-D90" firstAttribute="top" secondItem="jK1-cQ-Cmo" secondAttribute="bottom" constant="53" id="lye-ds-nS4"/>
+                            <constraint firstItem="Zjz-6y-XA2" firstAttribute="leading" secondItem="jK1-cQ-Cmo" secondAttribute="leading" id="vdJ-7l-HBZ"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="myImageView" destination="jK1-cQ-Cmo" id="qRm-Zy-R8h"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="18.840579710144929" y="93.75"/>
+            <point key="canvasLocation" x="-312" y="100"/>
         </scene>
     </scenes>
     <resources>
+        <image name="1111" width="640" height="639"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
