@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="HW_PhotosLibrary_Cam_Caching" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Favorite Image" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n85-bi-n1b">
+                                <rect key="frame" x="50" y="103" width="212" height="28"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Q9D-rQ-30u">
+                                <rect key="frame" x="20" y="151" width="374" height="229"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kOy-gA-YbM">
+                                <rect key="frame" x="299.5" y="535" width="92.5" height="31"/>
+                                <color key="backgroundColor" systemColor="linkColor"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Open Cam"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SpG-cJ-PqB">
+                                <rect key="frame" x="20" y="536" width="113" height="30"/>
+                                <color key="backgroundColor" systemColor="linkColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="mzD-jy-voO"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="choose photo"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="kOy-gA-YbM" secondAttribute="bottom" constant="296" id="2At-wx-SSB"/>
+                            <constraint firstItem="kOy-gA-YbM" firstAttribute="top" secondItem="Q9D-rQ-30u" secondAttribute="bottom" constant="155" id="4bH-De-H2h"/>
+                            <constraint firstItem="SpG-cJ-PqB" firstAttribute="bottom" secondItem="kOy-gA-YbM" secondAttribute="bottom" id="Gqr-sp-T2l"/>
+                            <constraint firstItem="Q9D-rQ-30u" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="MHw-x4-c86"/>
+                            <constraint firstItem="n85-bi-n1b" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="PJW-bF-jwJ"/>
+                            <constraint firstItem="Q9D-rQ-30u" firstAttribute="top" secondItem="n85-bi-n1b" secondAttribute="bottom" constant="20" id="QBK-QD-vpt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Q9D-rQ-30u" secondAttribute="bottom" constant="482" id="Saz-Sq-Z1z"/>
+                            <constraint firstItem="Q9D-rQ-30u" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Wj9-r6-7mX"/>
+                            <constraint firstItem="n85-bi-n1b" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="59" id="bcX-KJ-ziz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kOy-gA-YbM" secondAttribute="trailing" constant="22" id="de5-RN-fE3"/>
+                            <constraint firstItem="Q9D-rQ-30u" firstAttribute="top" secondItem="n85-bi-n1b" secondAttribute="bottom" constant="20" id="ghF-nh-kLU"/>
+                            <constraint firstItem="SpG-cJ-PqB" firstAttribute="leading" secondItem="Q9D-rQ-30u" secondAttribute="leading" id="h7n-6p-EqS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="n85-bi-n1b" secondAttribute="trailing" symbolic="YES" id="mdX-he-kbh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kOy-gA-YbM" secondAttribute="trailing" constant="22" id="pYe-Ir-cb7"/>
+                            <constraint firstItem="kOy-gA-YbM" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="SpG-cJ-PqB" secondAttribute="trailing" constant="8" symbolic="YES" id="q78-cQ-n1V"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Q9D-rQ-30u" secondAttribute="trailing" constant="20" id="rGe-Zn-HXx"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="67.633928571428569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
