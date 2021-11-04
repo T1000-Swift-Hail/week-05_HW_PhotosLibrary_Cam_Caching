@@ -9,8 +9,9 @@ import UIKit
 import PhotosUI
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, PHPickerViewControllerDelegate {
-
+    let imagePicker = UIImagePickerController()
     @IBOutlet weak var myImageView: UIImageView!
+     //let caching = CachingManager()
     
     let imgStore = ImgStore()
     let myFavImage = "myImageKey"
@@ -18,22 +19,19 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
         let imageToDisplay = imgStore.image(forKey: myFavImage)
-        
+        myImageView.image = imageToDisplay
         //Set the myImageView.image to imageToDisplay
-       
-        
-        
-        
     }
 
     @IBAction func OpenPhotosLibrary(_ sender: Any) {
+        presentPhotoPicker()
         // your code here
        
     }
     
     @IBAction func OpenCam(_ sender: Any) {
+        presentImagePicker()
         //your code here
        
     }
@@ -57,23 +55,18 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     
-    
-    
-    
     func imagePickerController(_ picker: UIImagePickerController,
             didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
-
+    
         // Take image picker off the screen - you must call this dismiss method
-        dismiss(animated: true, completion: nil)
+       // dismiss(animated: true, completion: nil)
 
         // Get picked image from info dictionary
-        let image = info[.originalImage] as! UIImage
-
-        // Put that image in the imageView
-        
-
-        // Store the image in the ImageStore for the item's key
+       let image = info[.originalImage] as! UIImage
+        self.imgStore.setImage(image, forKey: "url")
+        self.myImageView.image = image
         imgStore.setImage(image, forKey: myFavImage)
+
 
     }
 
@@ -89,7 +82,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                     
                     DispatchQueue.main.async {
                         // Put the image in the imageview
-                        
+                       
+                            self.myImageView.image = image
                     }
                 }
             }
@@ -100,4 +94,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     
 }
+
+
+
+
 
