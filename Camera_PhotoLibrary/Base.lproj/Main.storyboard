@@ -15,13 +15,57 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Favorite Image" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NIw-m6-Fdp">
+                                <rect key="frame" x="20" y="76" width="195" height="27.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2vk-FM-crh">
+                                <rect key="frame" x="20" y="154" width="374" height="280"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="280" id="DsF-Gg-vPr"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AdC-5n-jRZ">
+                                <rect key="frame" x="20" y="537" width="147" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Choose Photo">
+                                    <backgroundConfiguration key="background" cornerRadius="16"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="OpenPhotosLibrary:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OkB-dF-A3m"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VQL-Rc-fru">
+                                <rect key="frame" x="284" y="537" width="110" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Open Cam"/>
+                                <connections>
+                                    <action selector="OpenCam:" destination="BYZ-38-t0r" eventType="touchUpInside" id="V2A-Ul-AKL"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="2vk-FM-crh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="7eb-Ly-Iwg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2vk-FM-crh" secondAttribute="trailing" constant="20" id="KfQ-jP-7QH"/>
+                            <constraint firstItem="NIw-m6-Fdp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="TBL-WE-qa9"/>
+                            <constraint firstItem="2vk-FM-crh" firstAttribute="top" secondItem="NIw-m6-Fdp" secondAttribute="bottom" constant="50.5" id="n3G-NC-YkR"/>
+                            <constraint firstItem="NIw-m6-Fdp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="32" id="ngq-eV-mB7"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="myImageView" destination="2vk-FM-crh" id="XlT-Wj-rAi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="18.840579710144929" y="93.75"/>
+            <point key="canvasLocation" x="-201.44927536231884" y="95.758928571428569"/>
         </scene>
     </scenes>
     <resources>
