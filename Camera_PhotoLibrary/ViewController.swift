@@ -18,24 +18,19 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
         let imageToDisplay = imgStore.image(forKey: myFavImage)
         
-        //Set the myImageView.image to imageToDisplay
-       
+       myImageView.image = imageToDisplay
         
-        
-        
+        myImageView.layer.cornerRadius = 12
     }
 
     @IBAction func OpenPhotosLibrary(_ sender: Any) {
-        // your code here
-       
+                   presentPhotoPicker()
     }
     
     @IBAction func OpenCam(_ sender: Any) {
-        //your code here
-       
+                   presentImagePicker()
     }
     
     
@@ -62,14 +57,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func imagePickerController(_ picker: UIImagePickerController,
             didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
-
         // Take image picker off the screen - you must call this dismiss method
         dismiss(animated: true, completion: nil)
-
         // Get picked image from info dictionary
         let image = info[.originalImage] as! UIImage
-
-        // Put that image in the imageView
+        self.myImageView.image = image
         
 
         // Store the image in the ImageStore for the item's key
@@ -88,7 +80,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
                     
                     DispatchQueue.main.async {
-                        // Put the image in the imageview
+                        
+                self.imgStore.setImage(image,forKey:self.myFavImage)
+                        self.myImageView.image = image
                         
                     }
                 }

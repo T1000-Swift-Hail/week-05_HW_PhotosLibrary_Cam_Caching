@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -15,9 +15,72 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="86" translatesAutoresizingMaskIntoConstraints="NO" id="d2t-Wr-csm">
+                                <rect key="frame" x="20" y="44" width="374" height="420"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="crM-CM-XF0">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="303"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Favorate Photo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="33r-WQ-58e">
+                                                <rect key="frame" x="0.0" y="0.0" width="175" height="24"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4pf-hW-nxw">
+                                                <rect key="frame" x="0.0" y="32" width="374" height="271"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="374" id="YVr-6H-rK5"/>
+                                                    <constraint firstAttribute="height" constant="271" id="iVG-IW-5r5"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="134" translatesAutoresizingMaskIntoConstraints="NO" id="pQc-ON-Bx5">
+                                        <rect key="frame" x="0.0" y="389" width="374" height="31"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q0u-NQ-e43">
+                                                <rect key="frame" x="0.0" y="0.0" width="120" height="31"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="31" id="JYW-uj-ghO"/>
+                                                    <constraint firstAttribute="width" constant="120" id="VnV-g4-eim"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="gray" title="choose Photo" titleAlignment="automatic"/>
+                                                <connections>
+                                                    <action selector="OpenPhotosLibrary:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hhx-3Y-PMx"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XB8-LS-kQf">
+                                                <rect key="frame" x="254" y="0.0" width="120" height="31"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="120" id="MyR-Q9-SPe"/>
+                                                    <constraint firstAttribute="height" constant="31" id="gQ3-gE-ede"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="gray" title="Open Cam" titleAlignment="automatic"/>
+                                                <connections>
+                                                    <action selector="OpenCam:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HOV-bI-S6n"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="d2t-Wr-csm" secondAttribute="trailing" constant="20" id="APB-tM-u3r"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="d2t-Wr-csm" secondAttribute="bottom" constant="398" id="Wss-dO-Rg2"/>
+                            <constraint firstItem="d2t-Wr-csm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="k6r-ES-uyC"/>
+                            <constraint firstItem="d2t-Wr-csm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="wqc-R8-3KC"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="myImageView" destination="4pf-hW-nxw" id="r0c-S1-7Vt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
