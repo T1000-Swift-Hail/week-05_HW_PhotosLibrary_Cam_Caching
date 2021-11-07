@@ -7,16 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F8C1A4F2738052E00DCCA49 /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8C1A4E2738052E00DCCA49 /* ImageStore.swift */; };
 		9FE3FD532733F3130074E623 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE3FD522733F3130074E623 /* AppDelegate.swift */; };
 		9FE3FD552733F3130074E623 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE3FD542733F3130074E623 /* SceneDelegate.swift */; };
 		9FE3FD572733F3130074E623 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE3FD562733F3130074E623 /* ViewController.swift */; };
 		9FE3FD5A2733F3130074E623 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FE3FD582733F3130074E623 /* Main.storyboard */; };
 		9FE3FD5C2733F3140074E623 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FE3FD5B2733F3140074E623 /* Assets.xcassets */; };
 		9FE3FD5F2733F3140074E623 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FE3FD5D2733F3140074E623 /* LaunchScreen.storyboard */; };
-		9FE3FD672733FC2E0074E623 /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE3FD662733FC2E0074E623 /* ImageStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9F8C1A4E2738052E00DCCA49 /* ImageStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageStore.swift; path = PhotosLibrary_Cam_Caching/ImageStore.swift; sourceTree = SOURCE_ROOT; };
 		9FE3FD4F2733F3130074E623 /* PhotosLibrary_Cam_Caching.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotosLibrary_Cam_Caching.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FE3FD522733F3130074E623 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9FE3FD542733F3130074E623 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -25,7 +26,6 @@
 		9FE3FD5B2733F3140074E623 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9FE3FD5E2733F3140074E623 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9FE3FD602733F3140074E623 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9FE3FD662733FC2E0074E623 /* ImageStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageStore.swift; path = ../../Camera_PhotoLibrary/ImageStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +58,7 @@
 		9FE3FD512733F3130074E623 /* PhotosLibrary_Cam_Caching */ = {
 			isa = PBXGroup;
 			children = (
-				9FE3FD662733FC2E0074E623 /* ImageStore.swift */,
+				9F8C1A4E2738052E00DCCA49 /* ImageStore.swift */,
 				9FE3FD522733F3130074E623 /* AppDelegate.swift */,
 				9FE3FD542733F3130074E623 /* SceneDelegate.swift */,
 				9FE3FD562733F3130074E623 /* ViewController.swift */,
@@ -144,7 +144,7 @@
 				9FE3FD572733F3130074E623 /* ViewController.swift in Sources */,
 				9FE3FD532733F3130074E623 /* AppDelegate.swift in Sources */,
 				9FE3FD552733F3130074E623 /* SceneDelegate.swift in Sources */,
-				9FE3FD672733FC2E0074E623 /* ImageStore.swift in Sources */,
+				9F8C1A4F2738052E00DCCA49 /* ImageStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
