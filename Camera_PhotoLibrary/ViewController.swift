@@ -83,11 +83,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 if let image = image as? UIImage {
                     // Store the image in the ImageStore for the item's key
                     self.imgStore.setImage(image, forKey: self.myFavImage)
-                    self.myImageView.image = image
+                    
                     
                     DispatchQueue.main.async {
                         // Put the image in the imageview
-                        
+                        self.myImageView.image = image
                     }
                 }
             }
