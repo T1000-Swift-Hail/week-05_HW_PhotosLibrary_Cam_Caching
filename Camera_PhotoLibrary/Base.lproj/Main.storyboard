@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -15,13 +15,60 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mNU-so-VZF">
+                                <rect key="frame" x="0.0" y="122" width="414" height="304"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="304" id="5jb-ay-5f4"/>
+                                    <constraint firstAttribute="width" constant="414" id="MTk-Ha-Wxa"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0DC-AZ-51e">
+                                <rect key="frame" x="284" y="590" width="82" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="QFX-l7-jDr"/>
+                                    <constraint firstAttribute="width" constant="82" id="xKs-Fs-IQH"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Cem"/>
+                                <connections>
+                                    <action selector="OpenPhotosLibrary:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dgT-qV-BVI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xB9-18-vh8">
+                                <rect key="frame" x="49" y="574" width="146" height="63"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="63" id="B0O-wz-nWb"/>
+                                    <constraint firstAttribute="width" constant="146" id="eUW-2Q-UWa"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="photo library"/>
+                                <connections>
+                                    <action selector="OpenCam:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fog-Td-Qyi"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="xB9-18-vh8" firstAttribute="top" secondItem="mNU-so-VZF" secondAttribute="bottom" constant="148" id="6SL-iT-1Ts"/>
+                            <constraint firstItem="mNU-so-VZF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="R9x-p1-acf"/>
+                            <constraint firstItem="0DC-AZ-51e" firstAttribute="leading" secondItem="xB9-18-vh8" secondAttribute="trailing" constant="89" id="f4E-El-aat"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0DC-AZ-51e" secondAttribute="bottom" constant="241" id="gsj-sO-myt"/>
+                            <constraint firstItem="mNU-so-VZF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="78" id="ntm-JQ-kUX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="xB9-18-vh8" secondAttribute="bottom" constant="225" id="nxX-UZ-Qgj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0DC-AZ-51e" secondAttribute="trailing" constant="48" id="oBI-w6-eLD"/>
+                            <constraint firstItem="xB9-18-vh8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="49" id="vB5-ph-8Xm"/>
+                            <constraint firstItem="0DC-AZ-51e" firstAttribute="top" secondItem="mNU-so-VZF" secondAttribute="bottom" constant="164" id="vUj-gq-fC1"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="myImageView" destination="mNU-so-VZF" id="VcG-2Z-rDk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="18.840579710144929" y="93.75"/>
+            <point key="canvasLocation" x="150.72463768115944" y="85.714285714285708"/>
         </scene>
     </scenes>
     <resources>
